@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace POS_ILS2
@@ -214,7 +212,7 @@ namespace POS_ILS2
         {
             SaveFileDialog sfd = new SaveFileDialog(); //para makapili po ng pagse save-an yung user
             sfd.Filter = "Excel Documents (*.xlsx)|*.xlsx";
-            sfd.FileName = "Receipt.xls";
+            sfd.FileName = "Receipt.xlsx";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 var outputFile = new FileInfo(sfd.FileName);
@@ -238,7 +236,6 @@ namespace POS_ILS2
                             receiptData.VAT = txtVat.Text;
                             receiptData.discountPct = txt_discountP.Text;
                             receiptData.TotalPrice = totalAmount.Text;
-
 
                             receipt.Add(receiptData);
                         }
